@@ -1,7 +1,5 @@
 package com.JdbcDtoPattern.jdbcDto.entity;
 
-import org.hibernate.annotations.GeneratorType;
-
 import javax.persistence.*;
 import java.io.Serializable;
 

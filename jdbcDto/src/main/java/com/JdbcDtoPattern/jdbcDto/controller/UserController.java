@@ -27,4 +27,11 @@ public class UserController {
         return userService.addUser(newUser);
     }
 
+    public UserDto updateUserInfo() {
+
+
+        return null;
+
+    }
+
 }
