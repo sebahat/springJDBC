@@ -1,4 +1,5 @@
 package com.JdbcDtoPattern.jdbcDto.entity;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -24,7 +25,7 @@ public class Author {
 
 
     @ManyToMany(mappedBy = "authors")
-    private List<Books> authorBooks = new ArrayList<>();
+    private List<Books> authorBooks;
 
     public Author() {
 
@@ -32,6 +33,14 @@ public class Author {
 
     public List<Books> getAuthorBooks() {
         return authorBooks;
+    }
+
+    public void addBooks(List<Books> books) {
+        if (this.authorBooks == null) {
+            this.authorBooks = new ArrayList<>();
+        }
+        authorBooks = books;
+
     }
 
     public void setAuthorBooks(List<Books> authorBooks) {
