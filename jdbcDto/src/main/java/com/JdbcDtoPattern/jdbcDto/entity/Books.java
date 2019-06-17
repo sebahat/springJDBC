@@ -18,6 +18,9 @@ public class Books {
     @Column(name = "name")
     String name;
 
+    @Column(name = "reserved")
+    Boolean reserved;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "authorBooks", schema = "library",
             joinColumns = {@JoinColumn(name = "books_id", referencedColumnName = "id")},
@@ -25,6 +28,14 @@ public class Books {
     private List<Author> authors = new ArrayList<>();
 
     public Books() {
+    }
+
+    public Boolean getReserved() {
+        return reserved;
+    }
+
+    public void setReserved(Boolean reserved) {
+        this.reserved = reserved;
     }
 
     public List<Author> getAuthors() {

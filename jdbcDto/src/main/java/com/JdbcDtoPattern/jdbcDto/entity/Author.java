@@ -24,7 +24,7 @@ public class Author {
     String surname;
 
 
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(fetch=FetchType.LAZY,mappedBy = "authors",cascade = CascadeType.PERSIST)
     private List<Books> authorBooks;
 
     public Author() {

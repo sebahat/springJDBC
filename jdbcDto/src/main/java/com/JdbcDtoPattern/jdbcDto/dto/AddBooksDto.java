@@ -1,7 +1,4 @@
 package com.JdbcDtoPattern.jdbcDto.dto;
-
-import com.JdbcDtoPattern.jdbcDto.entity.Books;
-
 import java.util.List;
 
 

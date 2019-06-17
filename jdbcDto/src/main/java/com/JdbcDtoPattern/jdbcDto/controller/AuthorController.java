@@ -28,15 +28,14 @@ public class AuthorController {
         return authorService.saveAuthor(author);
     }
 
-    //TODO last adding pagination
+    //TODO last adding pagination change crud repository
     @GetMapping(path = "/getAllAuthors")
     public List<Author> getAllAuthor() {
         return authorService.getAllAuthors();
     }
-
+    //important :Cascade Type PERSİST so books add existing book
     @PostMapping(path = "/addBooks")
     public Author addBook(@RequestBody AddBooksDto dto) {
-
         return authorService.updateBooks(dto.getId(), dto.getBooks());
     }
 

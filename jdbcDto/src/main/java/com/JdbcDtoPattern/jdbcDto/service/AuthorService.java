@@ -37,7 +37,8 @@ public class AuthorService {
         Author author = getAuthor(id).get();
         List<Books> books = modelMapper.map(booksdto, targetListType);
         author.addBooks(books);
-        //  author.setAuthorBooks(books);
+
+
         return authorRepository.save(author);
     }
 
