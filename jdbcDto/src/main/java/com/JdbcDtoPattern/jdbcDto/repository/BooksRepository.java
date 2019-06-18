@@ -10,7 +10,7 @@ import java.util.List;
 public interface BooksRepository extends CrudRepository<Books, Integer> {
 
     @Query(value = "SELECT books.id,books.name,books.reserved FROM library.author as author,library.author_books as jointable ,library.books as books \n" +
-            "WHERE author.name =:authorName GROUP BY books.id ;",nativeQuery = true)
+            "WHERE author.name =:authorName GROUP BY books.id ;", nativeQuery = true)
     List<Books> getFilterAuthorName(@Param("authorName") String authorName);
 
 }
