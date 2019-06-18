@@ -1,5 +1,7 @@
 package com.JdbcDtoPattern.jdbcDto.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -25,6 +27,7 @@ public class Author {
 
 
     @ManyToMany(fetch=FetchType.LAZY,mappedBy = "authors",cascade = CascadeType.PERSIST)
+    @JsonBackReference
     private List<Books> authorBooks;
 
     public Author() {

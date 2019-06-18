@@ -12,6 +12,7 @@ public class BooksDto {
 
     Boolean reserved;
 
+
     private List<Author> authors = new ArrayList<>();
 
     public BooksDto() {

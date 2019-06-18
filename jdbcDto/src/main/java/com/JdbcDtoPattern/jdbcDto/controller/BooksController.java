@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.print.Book;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -27,6 +28,11 @@ public class BooksController {
     @PostMapping(path = "/updateStatus")
     public Books updateStatus(@RequestBody BooksDto booksDto) {
         return bookService.update(booksDto);
+    }
+
+    @PostMapping(path = "/filterAuthorName")
+    public List<Books> getBooks(@RequestBody String authorName) {
+        return bookService.getFilterAuthorName(authorName);
     }
 
 

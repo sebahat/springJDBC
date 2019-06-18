@@ -27,11 +27,9 @@ public class UserController {
         return userService.addUser(newUser);
     }
 
+   //TODO UserInfo controller adding 17.06.2019
     public UserDto updateUserInfo() {
-
-
         return null;
-
     }
 
 }

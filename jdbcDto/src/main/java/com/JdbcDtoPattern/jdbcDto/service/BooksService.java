@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,6 +32,11 @@ public class BooksService {
         Books bookDb = booksNew.get();
         bookDb.setReserved(true);
         return bookRepository.save(bookDb);
+    }
+
+
+    public List<Books> getFilterAuthorName(String authorName) {
+        return bookRepository.getFilterAuthorName(authorName);
     }
 
 }

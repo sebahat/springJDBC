@@ -1,5 +1,7 @@
 package com.JdbcDtoPattern.jdbcDto.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -25,6 +27,7 @@ public class Books {
     @JoinTable(name = "authorBooks", schema = "library",
             joinColumns = {@JoinColumn(name = "books_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "author_id", referencedColumnName = "id")})
+    @JsonManagedReference
     private List<Author> authors = new ArrayList<>();
 
     public Books() {
