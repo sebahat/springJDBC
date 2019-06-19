@@ -25,14 +25,14 @@ public class Author {
     @Column(name = "surname")
     String surname;
 
+
+    @ManyToMany(fetch=FetchType.LAZY,mappedBy = "authors",cascade = CascadeType.PERSIST)
     @JsonBackReference
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "authors", cascade = CascadeType.PERSIST)
     private List<Books> authorBooks;
 
     public Author() {
 
     }
-
 
     public List<Books> getAuthorBooks() {
         return authorBooks;
